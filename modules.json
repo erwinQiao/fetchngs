@@ -1,10 +1,25 @@
 {
-    "name": "nf-core/mytest",
-    "homePage": "https://github.com/nf-core/mytest",
+    "name": "nf-core/fetchngs",
+    "homePage": "https://github.com/nf-core/fetchngs",
     "repos": {
         "https://github.com/nf-core/modules.git": {
             "modules": {
                 "nf-core": {
+                    "fastqc": {
+                        "branch": "master",
+                        "git_sha": "18eb358065b06f2d3419e37383b002fe7db3da02",
+                        "installed_by": ["modules"]
+                    },
+                    "fastqdl": {
+                        "branch": "master",
+                        "git_sha": "a77c545beeccca8c627a84f1279472639d418ff5",
+                        "installed_by": ["modules"]
+                    },
+                    "samtools/view": {
+                        "branch": "master",
+                        "git_sha": "5f344f0e41fdfaf2506f89400e42a2689d6ab323",
+                        "installed_by": ["modules"]
+                    }
                 }
             },
             "subworkflows": {

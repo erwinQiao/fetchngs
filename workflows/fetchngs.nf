@@ -4,7 +4,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
-include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_mytest_pipeline'
+include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_fetchngs_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12,7 +12,7 @@ include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_myte
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-workflow MYTEST {
+workflow FETCHNGS {
 
     take:
     ch_samplesheet // channel: samplesheet read in from --input
@@ -46,7 +46,7 @@ workflow MYTEST {
         .mix(topic_versions_string)
         .collectFile(
             storeDir: "${outdir}/pipeline_info",
-            name: 'nf_core_'  +  'mytest_software_'  + 'versions.yml',
+            name: 'nf_core_'  +  'fetchngs_software_'  + 'versions.yml',
             sort: true,
             newLine: true
         )

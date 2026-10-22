@@ -18,8 +18,8 @@ lint:
 
 template:
   org: nf-core
-  name: mytest
-  description: mytest nf-core
+  name: fetchngs
+  description: fetchngs nf-core
   author: erwinQiao
   version: 1.0.0dev
   force: true

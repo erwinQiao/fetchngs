@@ -1,11 +1,11 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    nf-core/mytest
+    nf-core/fetchngs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/nf-core/mytest
-    Website: https://nf-co.re/mytest
-    Slack  : https://nfcore.slack.com/channels/mytest
+    Github : https://github.com/nf-core/fetchngs
+    Website: https://nf-co.re/fetchngs
+    Slack  : https://nfcore.slack.com/channels/fetchngs
 ----------------------------------------------------------------------------------------
 */
 
@@ -15,9 +15,9 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { MYTEST  } from './workflows/mytest'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_mytest_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_mytest_pipeline'
+include { FETCHNGS  } from './workflows/fetchngs'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_fetchngs_pipeline'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_fetchngs_pipeline'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     NAMED WORKFLOWS FOR PIPELINE
@@ -27,7 +27,7 @@ include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_myte
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow NFCORE_MYTEST {
+workflow NFCORE_FETCHNGS {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -37,7 +37,7 @@ workflow NFCORE_MYTEST {
     //
     // WORKFLOW: Run pipeline
     //
-    MYTEST (
+    FETCHNGS (
         samplesheet,
         params.outdir,
     )
@@ -64,7 +64,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    NFCORE_MYTEST (
+    NFCORE_FETCHNGS (
         PIPELINE_INITIALISATION.out.samplesheet
     )
     //

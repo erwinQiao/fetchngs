@@ -1,5 +1,5 @@
 //
-// Subworkflow with functionality specific to the nf-core/mytest pipeline
+// Subworkflow with functionality specific to the nf-core/fetchngs pipeline
 //
 
 /*
